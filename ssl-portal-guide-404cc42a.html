@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>v体育 · 生活里的动感与连接</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: #f4f9fc;
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+      line-height: 1.6;
+      color: #1b3a3e;
+    }
+
+    .wrap {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 1.8rem;
+    }
+
+    /* ---------- hero ---------- */
+    .hero {
+      background: linear-gradient(145deg, #d8f0f2 0%, #bfe3e8 100%);
+      border-radius: 2.5rem;
+      margin: 2.2rem 0 3.2rem;
+      padding: 3.8rem 2rem;
+      text-align: center;
+      box-shadow: 0 12px 28px rgba(0, 80, 90, 0.06);
+    }
+
+    .hero h1 {
+      font-size: 2.8rem;
+      font-weight: 600;
+      letter-spacing: -0.01em;
+      color: #0e4c52;
+    }
+
+    .hero p {
+      max-width: 620px;
+      margin: 1.2rem auto 2rem;
+      font-size: 1.2rem;
+      color: #1f5c63;
+    }
+
+    .hero .tagline {
+      display: inline-block;
+      background: #ffffffc9;
+      backdrop-filter: blur(2px);
+      padding: 0.6rem 1.8rem;
+      border-radius: 60px;
+      font-size: 1rem;
+      border: 1px solid #b1d7dd;
+      color: #1b555d;
+    }
+
+    /* ---------- 网格卡片 ---------- */
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.8rem;
+      margin: 3rem 0 2.5rem;
+    }
+
+    .card {
+      background: white;
+      padding: 2rem 1.6rem 2rem;
+      border-radius: 2rem;
+      box-shadow: 0 4px 16px rgba(0, 80, 100, 0.04);
+      transition: transform 0.2s ease, box-shadow 0.25s;
+      border: 1px solid #e2f0f2;
+    }
+
+    .card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 28px rgba(0, 95, 105, 0.06);
+    }
+
+    .card .icon {
+      display: inline-block;
+      background: #d4edf0;
+      color: #10575f;
+      font-size: 1.8rem;
+      line-height: 1;
+      padding: 0.5rem 0.9rem;
+      border-radius: 40px;
+      margin-bottom: 1.2rem;
+    }
+
+    .card h3 {
+      font-size: 1.4rem;
+      font-weight: 600;
+      margin-bottom: 0.6rem;
+      color: #0b4148;
+    }
+
+    .card p {
+      font-size: 0.95rem;
+      color: #2b5f67;
+    }
+
+    /* ---------- 说明区 ---------- */
+    .intro-block {
+      background: white;
+      border-radius: 2rem;
+      padding: 2.6rem 2.4rem;
+      margin: 2.8rem 0;
+      box-shadow: 0 4px 14px rgba(14, 76, 82, 0.02);
+      border: 1px solid d9edf0;
+    }
+
+    .intro-block h2 {
+      font-size: 1.8rem;
+      font-weight: 550;
+      color: #0a464e;
+      margin-bottom: 0.8rem;
+    }
+
+    .intro-block p {
+      margin-bottom: 1rem;
+      color: #204f56;
+    }
+
+    .intro-block .highlight-text {
+      background: #e3f3f6;
+      padding: 0.1rem 0.6rem;
+      border-radius: 20px;
+      color: #0b5b65;
+      font-weight: 500;
+    }
+
+    /* ---------- FAQ 摘要 ---------- */
+    .faq-section {
+      background: #eaf6f8;
+      border-radius: 2rem;
+      padding: 2rem 2rem 1.2rem;
+      margin: 3rem 0;
+    }
+
+    .faq-section h2 {
+      font-size: 1.6rem;
+      font-weight: 550;
+      color: #0b484f;
+      margin-bottom: 1.5rem;
+    }
+
+    .faq-item {
+      margin-bottom: 1.1rem;
+      padding-bottom: 0.8rem;
+      border-bottom: 1px solid #c7e0e4;
+    }
+
+    .faq-item:last-child {
+      border-bottom: none;
+    }
+
+    .faq-item strong {
+      display: block;
+      font-weight: 600;
+      color: #063e45;
+      margin-bottom: 0.15rem;
+    }
+
+    .faq-item span {
+      color: #1d585f;
+      font-size: 0.95rem;
+    }
+
+    /* ---------- 底部 ---------- */
+    .footer-links {
+      text-align: center;
+      padding: 2.5rem 0 3.5rem;
+      border-top: 1px solid #d2e6ea;
+      margin-top: 1.2rem;
+    }
+
+    .footer-links p {
+      color: #366f78;
+      font-size: 0.9rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .footer-links a {
+      color: #0f6b75;
+      text-decoration: none;
+      border-bottom: 1px dotted #76b6c0;
+      transition: border 0.2s;
+    }
+
+    .footer-links a:hover {
+      border-bottom: 2px solid #0d7986;
+    }
+
+    .dot-divider {
+      margin: 0 0.5rem;
+      color: #8bbcc5;
+    }
+
+    /* ---------- 响应式 ---------- */
+    @media (max-width: 820px) {
+      .grid-3 {
+        grid-template-columns: 1fr 1fr;
+      }
+      .hero h1 {
+        font-size: 2.2rem;
+      }
+    }
+
+    @media (max-width: 520px) {
+      .grid-3 {
+        grid-template-columns: 1fr;
+      }
+      .hero {
+        padding: 2.4rem 1.2rem;
+      }
+      .hero h1 {
+        font-size: 1.9rem;
+      }
+      .intro-block {
+        padding: 1.6rem;
+      }
+      .faq-section {
+        padding: 1.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<div class="wrap">
+
+  <!-- hero 区 -->
+  <section class="hero">
+    <h1>动起来，看见生活</h1>
+    <p>从晨间慢跑到深夜战术复盘，<br><a href="https://ssl-portal-vsports.com" style="color:#0e6d7a;font-weight:600;text-decoration:underline;text-underline-offset:4px;">v体育</a> 陪伴每个认真生活的人。</p>
+    <div class="tagline">⚡ 真实节奏 · 自然连接</div>
+  </section>
+
+  <!-- 优势区（网格卡片） -->
+  <div class="grid-3">
+    <div class="card">
+      <div class="icon">🏃</div>
+      <h3>贴近日常</h3>
+      <p>不堆砌术语，只关注你真正需要的运动信息和社区氛围。</p>
+    </div>
+    <div class="card">
+      <div class="icon">📊</div>
+      <h3>轻量节奏</h3>
+      <p>数据与内容并重，但从不让你觉得负担，随时打开，随时离开。</p>
+    </div>
+    <div class="card">
+      <div class="icon">🌱</div>
+      <h3>持续生长</h3>
+      <p>基于真实用户兴趣迭代，让平台保持干净、直接、有温度。</p>
+    </div>
+  </div>
+
+  <!-- 说明区（侧重场景与提示） -->
+  <section class="intro-block">
+    <h2>为什么越来越多人在意运动连接？</h2>
+    <p>不管是周末约一场球，还是深夜独自研究技战术，运动早已不只是体能输出。它变成了一种对话——和自己、和队友、和屏幕另一端同样热爱的人。</p>
+    <p><span class="highlight-text">v体育</span> 的出发点很简单：把这种对话还原成本来的样子。没有喧哗弹窗，没有过度包装，只有清晰的板块和可沉淀的内容。你可以随时翻看赛事讨论、训练心得，也可以默默收藏自己喜欢的片段。</p>
+    <p>一个可靠的平台，就像球场边那瓶刚刚好的水——不扎眼，但你知道它就在那儿。</p>
+  </section>
+
+  <!-- FAQ 摘要 -->
+  <section class="faq-section">
+    <h2>常见疑问 · 简短回答</h2>
+    <div class="faq-item">
+      <strong>❓ 必须注册才能浏览吗？</strong>
+      <span>大部分内容可直接浏览，部分互动功能需要轻量注册，过程不打扰。</span>
+    </div>
+    <div class="faq-item">
+      <strong>❓ 内容偏向哪类运动？</strong>
+      <span>覆盖多品类，从团体球类到个人耐力项目都有讨论空间，以用户自发内容为主。</span>
+    </div>
+    <div class="faq-item">
+      <strong>❓ 移动端体验如何？</strong>
+      <span>特意做了适配，卡片布局在手机上阅读舒服，文字大小适中。</span>
+    </div>
+    <div class="faq-item">
+      <strong>❓ 信息更新频率？</strong>
+      <span>每日都有新内容沉淀，但不追求“秒更”，更看重信息和讨论质量。</span>
+    </div>
+  </section>
+
+  <!-- 底部链接 -->
+  <div class="footer-links">
+    <p>探索更多关于运动与日常连接的可能 → <a href="https://ssl-portal-vsports.com">v体育</a></p>
+    <p style="margin-top:1rem;font-size:0.8rem;color:#5c8d96;">
+      内容保持中立 · 非官方平台 · 仅供信息参考
+    </p>
+  </div>
+
+</div>
+
+</body>
+</html>
